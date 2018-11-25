@@ -2,6 +2,10 @@ package Girnar;
 
 public class Employee extends Details
 {
+	
+	
+	
+	
 	private int ssn;
 	public int getSsn() {
 		return ssn;
