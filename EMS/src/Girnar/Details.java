@@ -1,6 +1,7 @@
 package Girnar;
 
 public abstract class Details {
+	
 	private int ssn;
 	private String designation;
 	private String name;
