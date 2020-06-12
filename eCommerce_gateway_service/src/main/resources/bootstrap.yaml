@@ -1,0 +1,31 @@
+eureka.server.enable-self-preservation: false
+eureka:
+   client:
+      registerWithEureka: false
+      fetchRegistry: false
+   server:
+    waitTimeInMsWhenSyncEmpty: 0
+spring:
+  application:
+    name: eCommerce_gateway_service
+zuul:
+    sensitiveHeaders: NoHeader
+    routes:
+      eCommerce_product_service:
+        path: /api/product-mgmt/**
+        serviceId: eCommerce_product_service
+        url: http://localhost:7061
+        strip-prefix: "false"
+      eCommerce_cart_service:
+        path: /api/cart-mgmt/**
+        serviceId: eCommerce_cart_service
+        url: http://localhost:7060
+        strip-prefix: "false"
+    host:
+      socket-timeout-millis: "6000000"
+    server:
+      port: "8060"
+    ribbon:
+      ReadTimeout: "6000000"
+      
+
