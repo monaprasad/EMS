@@ -12,7 +12,7 @@ spring:
     config:
       server:
         git:
-          uri: D://reverse_kt//MONIKA//EMS//eCommerce_gateway_service//src//main//resources
+          uri: D://reverse_kt//MONIKA//EMS//eCommerce_product_service//src//main//resources
           cloneOnStart: true
 zuul:
     sensitiveHeaders: NoHeader
