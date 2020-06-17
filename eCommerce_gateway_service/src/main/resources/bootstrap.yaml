@@ -8,6 +8,12 @@ eureka:
 spring:
   application:
     name: eCommerce_gateway_service
+  cloud:
+    config:
+      server:
+        git:
+          uri: D://reverse_kt//MONIKA//EMS//eCommerce_gateway_service//src//main//resources
+          cloneOnStart: true
 zuul:
     sensitiveHeaders: NoHeader
     routes:
