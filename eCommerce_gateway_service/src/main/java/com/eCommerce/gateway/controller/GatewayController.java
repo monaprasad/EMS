@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.eCommerce.gateway.config.CloudConfig;
 
-@Controller
+@RestController
 public class GatewayController {
 
 	@Autowired
@@ -31,21 +31,6 @@ public class GatewayController {
 	@GetMapping("/welCome/")
 	public String welCome() {
 		return welcomeText;
-	}
-	
-//	@RequestMapping(value= "/login" , method = RequestMethod.GET)
-//	@ResponseBody
-//	@GetMapping("/login")
-//	public String getloginpage() {
-//		ModelAndView modeView = new ModelAndView("loginTwo");
-//		return "login";
-//	}
-	
-//	@RequestMapping(value= "/greeting" , method = RequestMethod.GET)
-	@GetMapping("/greeting")
-	public String greeting(@RequestParam(name="name", required=true, defaultValue="World") String name, Model model) {
-		model.addAttribute("name", name);
-		return "greeting";
 	}
 
 }
