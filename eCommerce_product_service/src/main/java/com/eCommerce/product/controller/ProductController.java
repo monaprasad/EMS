@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.eCommerce.product.config.CloudConfig;
 import com.eCommerce.product.entity.ProductAddUpdate;
 import com.eCommerce.product.entity.ProductEntity;
 import com.eCommerce.product.service.ProductService;
@@ -28,9 +30,24 @@ public class ProductController {
 	@Autowired
 	ProductService productService;
 	
+	@Autowired
+	CloudConfig cloudConfig;
+	
+	@Value("${welcome.message}")
+	private String welcomeText;
+	 
+	@GetMapping("/welCome/")
+	public String welCome() {
+		return welcomeText;
+	}
 	@GetMapping("/")
 	public String getConfigData() {
-		return "hi Monika";
+		return cloudConfig.getName();
+	}
+	
+	@GetMapping("/api/monika")
+	public String getMyName() {
+		return "monika";
 	}
 	
 	@GetMapping("/products/recommendations")
