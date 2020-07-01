@@ -4,7 +4,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 @Component
-@ConfigurationProperties(prefix="com.cloud.portName")
+//@ConfigurationProperties(prefix="com.cloud.portName")
 public class CloudConfig {
 	
 	private String name;
