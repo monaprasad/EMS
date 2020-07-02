@@ -17,6 +17,7 @@ spring:
           uri: D://reverse_kt//MONIKA//EMS//eCommerce_product_service//src//main//resources//.git
         native:
           search-locations: file:///D:/monika_git_cloud_config/cloud-config/
+        #  search-locations: D://monika_git_cloud_config//cloud-config//.git
           cloneOnStart: true
 zuul:
     sensitiveHeaders: NoHeader
